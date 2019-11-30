@@ -1,0 +1,51 @@
+{
+	"name": "nzsample",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "msstoragecommon",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"container": "nov302019"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"name": "year",
+				"type": "String"
+			},
+			{
+				"name": "industry_code_ANZSIC",
+				"type": "String"
+			},
+			{
+				"name": "industry_name_ANZSIC",
+				"type": "String"
+			},
+			{
+				"name": "rme_size_grp",
+				"type": "String"
+			},
+			{
+				"name": "variable",
+				"type": "String"
+			},
+			{
+				"name": "value",
+				"type": "String"
+			},
+			{
+				"name": "unit",
+				"type": "String"
+			}
+		]
+	}
+}
