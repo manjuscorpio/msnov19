@@ -1,0 +1,6 @@
+{
+	"name": "Msnov19integrationruntime",
+	"properties": {
+		"type": "SelfHosted"
+	}
+}
