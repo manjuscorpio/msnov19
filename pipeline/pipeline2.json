@@ -1,6 +1,39 @@
 {
 	"name": "pipeline2",
 	"properties": {
+		"activities": [
+			{
+				"name": "ScaleDatabase",
+				"type": "WebActivity",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"url": "https://management.azure.com/subscriptions/20e7aedf-fb57-4215-9a30-e716912175f9/resourceGroups/msresgroup/providers/Microsoft.Sql/servers/msdec19/databases/msdec19?api-version=2017-10-01-preview",
+					"method": "PUT",
+					"headers": {
+						"Content-Type": "application/json"
+					},
+					"body": {
+						"sku": {
+							"name": "S1",
+							"tier": "Standard"
+						},
+						"location": "Southeast Asia"
+					},
+					"authentication": {
+						"type": "MSI",
+						"resource": "https://management.azure.com/"
+					}
+				}
+			}
+		],
 		"annotations": []
 	}
 }
